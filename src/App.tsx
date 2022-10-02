@@ -1,7 +1,7 @@
-import Hello from '~/components/Hello';
+import Router from './router/Router';
 
 function App() {
-  return <Hello />;
+  return <Router />;
 }
 
 export default App;
