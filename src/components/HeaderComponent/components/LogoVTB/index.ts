@@ -1,0 +1,1 @@
+export { LogoVTB } from './LogoVTB';

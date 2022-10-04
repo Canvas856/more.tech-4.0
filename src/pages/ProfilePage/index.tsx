@@ -1,9 +1,10 @@
-import PageContainerComponent from '~/components/PageContainerComponent';
+import { HeaderComponent } from '~/components';
+import { PageContainerComponent } from '~/components/PageContainerComponent';
 
 const ProfilePage = () => {
   return (
     <PageContainerComponent>
-      <div>ProfilePage</div>
+      <HeaderComponent />
     </PageContainerComponent>
   );
 };
