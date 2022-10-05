@@ -7,44 +7,44 @@ export const Links = () => {
   return (
     <Flex gap='30px'>
       <NavLink
-        style={(isActive) => ({
+        style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.personalAccount}
       >
-        {Routers.personalAccount}
+        Личный кабинет
       </NavLink>
       <NavLink
-        style={(isActive) => ({
+        style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.income}
       >
-        {Routers.income}
+        Как заработать на монеты
       </NavLink>
       <NavLink
-        style={(isActive) => ({
+        style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.catalog}
       >
-        {Routers.catalog}{' '}
+        Каталог
       </NavLink>
       <NavLink
-        style={(isActive) => ({
+        style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.coinKeeper}
       >
-        {Routers.coinKeeper}{' '}
+        Мой кошелек
       </NavLink>
       <NavLink
-        style={(isActive) => ({
+        style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.platformPrincip}
       >
-        {Routers.platformPrincip}{' '}
+        Как работает платформа
       </NavLink>
     </Flex>
   );

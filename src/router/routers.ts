@@ -1,7 +1,7 @@
 export enum Routers {
-  personalAccount = 'Личный кабинет',
-  income = 'Как заработать на монеты',
-  catalog = 'Каталог',
-  coinKeeper = 'Мой кошелек',
-  platformPrincip = 'Как работает платформа',
+  personalAccount = 'personalCabinet',
+  income = 'quests',
+  catalog = 'catalog',
+  coinKeeper = 'coinKeeper',
+  platformPrincip = 'faq',
 }
