@@ -4,23 +4,19 @@ import { Routers } from '~/router/routers';
 import { colors } from '~/theme/colors';
 
 export const Links = () => {
-  const navLinkStyles = ({isActive}) => {
-    return
-  }
   return (
     <Flex gap='30px'>
       <NavLink
         style={(isActive) => ({
-          color: isActive ? colors.brand.blue[200] : colors.brand.white,
+          color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
-        
         to={Routers.personalAccount}
       >
         {Routers.personalAccount}
       </NavLink>
       <NavLink
         style={(isActive) => ({
-          color: isActive ? colors.brand.blue[200] : colors.brand.white,
+          color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.income}
       >
@@ -28,7 +24,7 @@ export const Links = () => {
       </NavLink>
       <NavLink
         style={(isActive) => ({
-          color: isActive ? colors.brand.blue[200] : colors.brand.white,
+          color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.catalog}
       >
@@ -36,7 +32,7 @@ export const Links = () => {
       </NavLink>
       <NavLink
         style={(isActive) => ({
-          color: isActive ? colors.brand.blue[200] : colors.brand.white,
+          color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.coinKeeper}
       >
@@ -44,7 +40,7 @@ export const Links = () => {
       </NavLink>
       <NavLink
         style={(isActive) => ({
-          color: isActive ? colors.brand.blue[200] : colors.brand.white,
+          color: isActive ? colors.brand.white : colors.brand.blue[200],
         })}
         to={Routers.platformPrincip}
       >
