@@ -5,10 +5,11 @@ import { colors } from '~/theme/colors';
 
 export const Links = () => {
   return (
-    <Flex gap='30px'>
+    <Flex gap='30px' alignItems={'center'}>
       <NavLink
         style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
+          fontWeight: 600,
         })}
         to={Routers.personalAccount}
       >
@@ -17,6 +18,7 @@ export const Links = () => {
       <NavLink
         style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
+          fontWeight: 600,
         })}
         to={Routers.income}
       >
@@ -25,6 +27,7 @@ export const Links = () => {
       <NavLink
         style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
+          fontWeight: 600,
         })}
         to={Routers.catalog}
       >
@@ -33,6 +36,7 @@ export const Links = () => {
       <NavLink
         style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
+          fontWeight: 600,
         })}
         to={Routers.coinKeeper}
       >
@@ -41,6 +45,7 @@ export const Links = () => {
       <NavLink
         style={({ isActive }) => ({
           color: isActive ? colors.brand.white : colors.brand.blue[200],
+          fontWeight: 600,
         })}
         to={Routers.platformPrincip}
       >
