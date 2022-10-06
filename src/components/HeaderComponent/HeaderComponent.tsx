@@ -1,12 +1,11 @@
-import { Box, Flex } from '@chakra-ui/react';
-import React from 'react';
+import { Flex } from '@chakra-ui/react';
 import { AmountCoins } from './components/AmountCoins';
 import { Links } from './components/Links';
 import { LogoVTB } from './components/LogoVTB';
 
 export const HeaderComponent = () => {
   return (
-    <Flex gap={'116px'}>
+    <Flex justifyContent={'space-between'}>
       <LogoVTB />
       <Links />
       <AmountCoins />

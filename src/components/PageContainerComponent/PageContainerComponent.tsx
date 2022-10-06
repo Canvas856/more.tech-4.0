@@ -6,7 +6,7 @@ type Props = {
 
 export const PageContainerComponent: React.FC<Props> = ({ children }) => {
   return (
-    <Container maxWidth={'100%'} paddingLeft={'175'} paddingTop={'30'} paddingRight={'175'}>
+    <Container maxWidth={'1602px'} pt={'30px'} pb={'55px'}>
       {children}
     </Container>
   );
