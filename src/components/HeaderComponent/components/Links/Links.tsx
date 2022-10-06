@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-import { Routes } from '~/router/routers';
+import { Routes } from '~/router/routes';
 import { HeaderLink } from '../HeaderLink/HeaderLink';
 
 export const Links = () => (

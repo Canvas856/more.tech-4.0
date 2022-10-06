@@ -1,6 +1,6 @@
 import { Flex, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { Routes } from '~/router/routers';
+import { Routes } from '~/router/routes';
 
 const imgUrl = new URL('./VTB_Logo_2018 1.svg', import.meta.url).href;
 
