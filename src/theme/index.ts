@@ -1,18 +1,7 @@
-import { ComponentStyleConfig, extendTheme } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 import { global } from './global';
 import { colors } from './colors';
-
-// https://chakra-ui.com/docs/styled-system/customize-theme#customizing-component-styles
-// Пример изменения стилей компонента
-const ButtonStyle: ComponentStyleConfig = {
-  variants: {
-    white: {
-      bg: '#333',
-      color: '#fff',
-      border: '1px solid #333',
-    },
-  },
-};
+import { Button } from './components/button';
 
 // https://chakra-ui.com/docs/styled-system/advanced-theming#theme-typings
 // каждый раз после изменения темы надо запускать команду npm run gen:theme-typings
@@ -21,6 +10,6 @@ export default extendTheme({
   colors,
   styles: { global },
   components: {
-    Button: ButtonStyle,
+    Button,
   },
 });
