@@ -1,7 +1,7 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
 import { colors } from '~/theme/colors';
 
-const imgUrl = new URL('./coin-svgrepo-com 1.svg', import.meta.url).href;
+export const imgUrl = new URL('./coin-svgrepo-com 1.svg', import.meta.url).href;
 
 type Props = { coins: number };
 
