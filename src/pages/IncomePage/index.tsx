@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, GridItem, useDisclosure } from '@chakra-ui/react';
 import {
   LargeQuestComponent,
   MediumQuestComponent,
@@ -12,10 +12,17 @@ import coffeeImage from '~/assets/images/coffee.png';
 import anchorImage from '~/assets/images/anchor.png';
 import shape16Image from '~/assets/images/shape-16.png';
 import helmImage from '~/assets/images/helm.png';
+import { QuestModalComponent } from '~/components/QuestModalComponent';
 
 const IncomePage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box as='section' mt='60px'>
+      <QuestModalComponent isOpen={isOpen} onClose={onClose} />
+      <Button variant='brand-fill' onClick={onOpen}>
+        Модальное окно квеста
+      </Button>
       <LargeQuestComponent
         action={() => console.log('click')}
         disabled={{ isDisabled: false, label: 'заблокировано' }}
@@ -28,7 +35,7 @@ const IncomePage = () => {
         subtitle='Напиши пост любви к нашей компании или выложи фото из офиса и сделай отметку аккаунта ВТБ в своём аккаунте'
         reward={75}
       />
-      <SectionComponent title='Ежедневные квесты' sx={{ mb: '100px' }}>
+      <SectionComponent size='lg' title='Ежедневные квесты' sx={{ mb: '100px' }}>
         <Flex gap='25px'>
           <SmallQuestComponent
             action={() => console.log('click')}
@@ -56,7 +63,7 @@ const IncomePage = () => {
           />
         </Flex>
       </SectionComponent>
-      <SectionComponent title='Все квесты'>
+      <SectionComponent size='lg' title='Все квесты'>
         <Grid templateColumns='repeat(2, 1fr)' gap='24px'>
           <GridItem>
             <MediumQuestComponent

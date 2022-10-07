@@ -17,6 +17,9 @@ export const colors = {
     },
     purple: {
       100: '#7B7BAA',
+      200: '#313154',
+      300: '#C4C4E4',
+      400: '#252546',
     },
     gray: {
       50: '#EDEDED',

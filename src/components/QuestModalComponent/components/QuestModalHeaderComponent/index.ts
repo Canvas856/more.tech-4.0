@@ -1,0 +1,1 @@
+export { QuestModalHeaderComponent } from './QuestModalHeaderComponent';
