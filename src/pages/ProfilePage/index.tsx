@@ -1,12 +1,7 @@
-import { HeaderComponent } from '~/components';
-import { PageContainerComponent } from '~/components/PageContainerComponent';
+import { ProfileComponent } from '~/components/ProfileComponent';
 
 const ProfilePage = () => {
-  return (
-    <PageContainerComponent>
-      <HeaderComponent />
-    </PageContainerComponent>
-  );
+  return <ProfileComponent />;
 };
 
 export default ProfilePage;

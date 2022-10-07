@@ -6,7 +6,7 @@ const imgUrl = new URL('./coin-svgrepo-com 1.svg', import.meta.url).href;
 export const AmountCoins = () => {
   return (
     <Flex flexDirection={'column'} alignItems={'flex-end'}>
-      <Text color={colors.brand.gray[300]} fontWeight={'500'} fontSize={'20px'}>
+      <Text color={colors.brand.blue[500]} fontWeight={'500'} fontSize={'20px'}>
         Баланс coin
       </Text>
       <Flex gap={'13px'} alignItems={'center'}>
