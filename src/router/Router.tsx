@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes as BrowserRoutes } from 'react-r
 import { HeaderComponent } from '~/components';
 import { PageContainerComponent } from '~/components/PageContainerComponent';
 import { RatingComponent } from '~/components/RatingComponent';
+import { SmallQuest } from '~/components/SmallQuest';
 import { Routes } from './routes';
 
 // Pages
