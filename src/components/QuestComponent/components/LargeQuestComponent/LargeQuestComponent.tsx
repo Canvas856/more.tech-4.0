@@ -50,7 +50,7 @@ export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
         position: 'relative',
         minHeight: '480px',
         backgroundPosition: 'right',
-        backgroundSize: 'contain',
+        backgroundSize: 'auto',
         backgroundRepeat: 'no-repeat',
         display: 'flex',
         flexDirection: 'column',

@@ -26,7 +26,7 @@ export const MediumQuestComponent: React.FC<MediumQuestProps> = ({
       maxWidth: '773px',
       minHeight: '389px',
       backgroundPosition: 'right',
-      backgroundSize: 'contain',
+      backgroundSize: 'auto',
       backgroundRepeat: 'no-repeat',
       display: 'flex',
       flexDirection: 'column',

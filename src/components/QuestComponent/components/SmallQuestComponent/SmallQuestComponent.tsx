@@ -12,7 +12,7 @@ export const SmallQuestComponent: React.FC<QuestProps> = ({ action, disabled, ti
       maxWidth: '374px',
       minHeight: '249px',
       backgroundPosition: 'right',
-      backgroundSize: 'contain',
+      backgroundSize: 'auto',
       backgroundRepeat: 'no-repeat',
       ...sx,
     }}

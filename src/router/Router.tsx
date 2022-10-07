@@ -6,6 +6,7 @@ import { Routes } from './routes';
 
 // Pages
 const ProfilePage = React.lazy(() => import('~/pages/ProfilePage'));
+const IncomePage = React.lazy(() => import('~/pages/IncomePage'));
 
 const Router = () => (
   <BrowserRouter>
@@ -15,7 +16,7 @@ const Router = () => (
         <Route path='/' element={<div>Personal Cabinet</div>} />
 
         <Route path={Routes.personalAccount} element={<div>Personal Cabinet</div>} />
-        <Route path={Routes.income} element={<div>How earn coins</div>} />
+        <Route path={Routes.income} element={<IncomePage />} />
         <Route path={Routes.catalog} element={<div>Catalog</div>} />
         <Route path={Routes.coinKeeper} element={<div>CoinKeeper</div>} />
         <Route path={Routes.platformPrincip} element={<div>How earn coins</div>} />
