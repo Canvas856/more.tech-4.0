@@ -53,7 +53,12 @@ export const MediumQuestComponent: React.FC<MediumQuestProps> = ({
       {percent ? (
         <ProgressBarComponent percent={percent} />
       ) : (
-        <Button variant='brand-outline'>начать квест</Button>
+        <Button
+          sx={{ '--color': sx?.backgroundColor?.toString() || colors.brand.blue[200] }}
+          variant='brand-outline'
+        >
+          начать квест
+        </Button>
       )}
     </Box>
   </PanelComponent>

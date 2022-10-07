@@ -6,6 +6,7 @@ import { colors } from '../colors';
 export const Button: ComponentStyleConfig = {
   variants: {
     'brand-outline': {
+      '--color': colors.brand.blue[200],
       border: `2px solid ${colors.brand.white}`,
       borderRadius: '12px',
       fontSize: '24px',
@@ -16,7 +17,7 @@ export const Button: ComponentStyleConfig = {
       fontWeight: '800',
       '&:hover': {
         background: colors.brand.white,
-        color: colors.brand.blue[200],
+        color: 'var(--color)',
       },
       '&:active': {
         background: colors.brand.gray[50],
@@ -29,6 +30,8 @@ export const Button: ComponentStyleConfig = {
       },
     },
     'brand-fill': {
+      '--color': colors.brand.blue[200],
+      '--active-color': colors.brand.blue[300],
       border: `2px solid ${colors.brand.white}`,
       borderRadius: '12px',
       fontSize: '24px',
@@ -38,15 +41,15 @@ export const Button: ComponentStyleConfig = {
       height: 'auto',
       fontWeight: '800',
       background: colors.brand.white,
-      color: colors.brand.blue[200],
+      color: 'var(--color)',
       '&:hover': {
-        background: colors.brand.blue[200],
-        borderColor: colors.brand.blue[200],
+        background: 'var(--color)',
+        borderColor: 'var(--color)',
         color: colors.brand.white,
       },
       '&:active': {
-        background: colors.brand.blue[300],
-        borderColor: colors.brand.blue[300],
+        background: 'var(--active-color)',
+        borderColor: 'var(--active-color)',
       },
       '&:disabled': {
         color: colors.brand.gray[200],
