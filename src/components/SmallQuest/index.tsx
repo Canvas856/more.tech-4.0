@@ -1,0 +1,1 @@
+export { SmallQuest } from './SmallQuest';
