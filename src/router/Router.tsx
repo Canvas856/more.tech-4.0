@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes as BrowserRoutes } from 'react-router-dom';
 import { HeaderComponent } from '~/components';
 import { PageContainerComponent } from '~/components/PageContainerComponent';
+import { RatingComponent } from '~/components/RatingComponent';
 import { Routes } from './routes';
 
 // Pages
@@ -13,7 +14,7 @@ const Router = () => (
     <PageContainerComponent>
       <HeaderComponent />
       <BrowserRoutes>
-        <Route path='/' element={<div>Personal Cabinet</div>} />
+        <Route path='/' element={<div>1</div>} />
 
         <Route path={Routes.personalAccount} element={<div>Personal Cabinet</div>} />
         <Route path={Routes.income} element={<IncomePage />} />

@@ -14,6 +14,7 @@ export const colors = {
       500: '#6B7EC3',
       600: '#2B2F56',
       700: '#161621',
+      800: ' #2CA6FF',
     },
     purple: {
       100: '#7B7BAA',
@@ -26,6 +27,9 @@ export const colors = {
       100: '#C2C2C2',
       200: '#787878',
       300: '#B5B5B5',
+    },
+    yellow: {
+      100: '#FFB800',
     },
   },
 };
