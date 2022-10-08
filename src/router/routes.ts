@@ -2,7 +2,7 @@ export const enum Routes {
   home = 'home',
   profile = 'profile',
   progressMap = 'progressMap',
-  catalog = 'catalog',
+  marketPlace = 'marketPlace',
   wallet = 'wallet',
   platformPrincip = 'platformPrincip',
 }
