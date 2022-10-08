@@ -49,7 +49,7 @@ export const ProfileComponent = () => {
             title='Артамонов Александр'
             subtitle='Продуктовый дизайнер'
             level={1}
-            progress={{ current: 36, total: 50, label: 'заданий' }}
+            progress={{ current: 3300, total: 5000, label: '' }}
           />
         </Box>
         <Box flex='1'>

@@ -10,6 +10,7 @@ import { colors } from '~/theme/colors';
 import { QuestProps } from '../../types/quest-props';
 
 export type LargeQuestProps = {
+  actionLabel: string;
   subtitle: string;
   deadline: Date;
   reward: number;
@@ -19,6 +20,7 @@ export type LargeQuestProps = {
 
 export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
   action,
+  actionLabel,
   disabled,
   title,
   label,
@@ -108,7 +110,7 @@ export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
         {percent ? (
           <ProgressBarComponent percent={percent} />
         ) : (
-          <Button variant='brand-outline'>участвовать</Button>
+          <Button variant='brand-outline'>{actionLabel}</Button>
         )}
         <CoinsComponent coins={reward} />
       </Flex>

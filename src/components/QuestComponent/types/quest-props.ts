@@ -5,5 +5,6 @@ export type QuestProps = {
   title: string;
   disabled: Disabled;
   action: () => void;
+  subtitle?: string;
   sx?: SystemStyleObject;
 };

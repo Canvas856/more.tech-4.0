@@ -7,7 +7,7 @@ const imgUrl = new URL('./VTB_Logo_2018 1.svg', import.meta.url).href;
 export const LogoVTB = () => {
   return (
     <Flex alignItems={'center'}>
-      <Link to={Routes.personalAccount}>
+      <Link to={Routes.profile}>
         <Image src={imgUrl} alt='VTB logo' />
       </Link>
     </Flex>

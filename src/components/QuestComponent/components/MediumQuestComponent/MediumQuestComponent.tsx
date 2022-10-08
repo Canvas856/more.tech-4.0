@@ -6,12 +6,14 @@ import { colors } from '~/theme/colors';
 import { QuestProps } from '../../types/quest-props';
 
 export type MediumQuestProps = {
+  actionLabel: string;
   label?: string;
   percent?: number;
 } & QuestProps;
 
 export const MediumQuestComponent: React.FC<MediumQuestProps> = ({
   action,
+  actionLabel,
   disabled,
   title,
   label,
@@ -57,7 +59,7 @@ export const MediumQuestComponent: React.FC<MediumQuestProps> = ({
           sx={{ '--color': sx?.backgroundColor?.toString() || colors.brand.blue[200] }}
           variant='brand-outline'
         >
-          начать квест
+          {actionLabel}
         </Button>
       )}
     </Box>

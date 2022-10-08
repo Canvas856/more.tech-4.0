@@ -1,6 +1,7 @@
 import { Box, Center, Flex, Image, Text } from '@chakra-ui/react';
 import { PanelComponent } from '~/components/PanelComponent';
 import { colors } from '~/theme/colors';
+import userImage from '~/assets/images/user.png';
 
 export type ProfileProgress = { current: number; total: number; label: string };
 type Props = {
@@ -31,14 +32,7 @@ export const ProfileProgressComponent: React.FC<Props> = ({ progress, subtitle, 
       }deg, ${colors.brand.blue[700]} 0deg)`}
       borderRadius='50%'
     >
-      <Image
-        src='https://bit.ly/dan-abramov'
-        alt=''
-        w='85%'
-        h='85%'
-        borderRadius='50%'
-        bg={colors.brand.black}
-      />
+      <Image src={userImage} alt='' w='85%' h='85%' borderRadius='50%' bg={colors.brand.black} />
     </Center>
     <Text
       pt='170px'
@@ -66,7 +60,11 @@ export const ProfileProgressComponent: React.FC<Props> = ({ progress, subtitle, 
       color={colors.brand.white}
     >
       <Box ml='auto' p='6px 10px' fontWeight='400'>
-        {progress.current}/{progress.total} {progress.label}
+        {progress.current}
+        <Text as='span' color={colors.brand.gray[100]}>
+          /{progress.total}
+        </Text>{' '}
+        {progress.label}
       </Box>
       <Box
         ml='auto'

@@ -4,7 +4,13 @@ import { PanelComponent } from '~/components/PanelComponent';
 import { colors } from '~/theme/colors';
 import { QuestProps } from '../../types/quest-props';
 
-export const SmallQuestComponent: React.FC<QuestProps> = ({ action, disabled, title, sx }) => (
+export const SmallQuestComponent: React.FC<QuestProps> = ({
+  action,
+  disabled,
+  title,
+  subtitle,
+  sx,
+}) => (
   <PanelComponent
     sx={{
       padding: '32px 29px',
@@ -14,12 +20,14 @@ export const SmallQuestComponent: React.FC<QuestProps> = ({ action, disabled, ti
       backgroundPosition: 'right',
       backgroundSize: 'auto',
       backgroundRepeat: 'no-repeat',
+      display: 'flex',
+      flexDirection: 'column',
       ...sx,
     }}
   >
     <DisabledPanelComponent {...disabled} />
     <Text
-      maxW='195px'
+      maxW='260px'
       fontWeight='600'
       fontSize='36px'
       color={colors.brand.white}
@@ -27,5 +35,10 @@ export const SmallQuestComponent: React.FC<QuestProps> = ({ action, disabled, ti
     >
       {title}
     </Text>
+    {subtitle && (
+      <Text mt='auto' maxWidth='300px'>
+        {subtitle}
+      </Text>
+    )}
   </PanelComponent>
 );

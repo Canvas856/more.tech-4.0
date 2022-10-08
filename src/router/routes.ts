@@ -1,6 +1,6 @@
 export const enum Routes {
-  personalAccount = 'personalCabinet',
-  income = 'quests',
+  home = 'home',
+  profile = 'personalCabinet',
   catalog = 'catalog',
   coinKeeper = 'coinKeeper',
   platformPrincip = 'faq',
