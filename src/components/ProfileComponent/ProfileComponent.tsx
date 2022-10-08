@@ -4,6 +4,7 @@ import { ProfileInfoItem, ProfileInfoListComponent } from './components/ProfileI
 import { PanelComponent } from '../PanelComponent';
 import { ProfileProgressComponent } from './components/ProfileProgressComponent';
 import { AchievementListComponent } from '../AchievementListComponent';
+import { useExp } from '~/api/exp';
 
 const profileInfoList: ProfileInfoItem[] = [
   {
@@ -29,6 +30,9 @@ const profileInfoList: ProfileInfoItem[] = [
 ];
 
 export const ProfileComponent = () => {
+  const { data: exp } = useExp();
+  const total = 5000;
+
   return (
     <PanelComponent sx={{ padding: '47px 24px 24px 24px', position: 'relative', mt: '103px' }}>
       <Box
@@ -48,8 +52,8 @@ export const ProfileComponent = () => {
           <ProfileProgressComponent
             title='Артамонов Александр'
             subtitle='Продуктовый дизайнер'
-            level={1}
-            progress={{ current: 3300, total: 5000, label: '' }}
+            level={Math.floor((exp || 0) / total) + 1}
+            progress={{ current: exp || 0, total, label: '' }}
           />
         </Box>
         <Box flex='1'>

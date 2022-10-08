@@ -4,11 +4,15 @@ import { SectionComponent } from '~/components/SectionComponent';
 import { Quest, Task } from '~/types/quest';
 import { QuestModalComponent } from '~/components/QuestModalComponent';
 import { useState } from 'react';
-import { quests as mockQuests } from '~/mock/initialQuests';
 import { isQuest, isTask } from '~/utils/quest';
 import { BalloonQuestComponent } from './components/BalloonQuestComponent';
+import { useQuests, useSetQuests } from '~/api/quests';
+import { useAddExp } from '~/api/exp';
 
 const ProgressMapPage = () => {
+  const { data: quests } = useQuests();
+  const setQuests = useSetQuests();
+  const addExp = useAddExp();
   const [groupName, setGroupName] = useState('');
   const [openedTask, setOpenedTask] = useState<Task | undefined>(undefined);
   const [openedQuest, setOpenedQuest] = useState<Quest | undefined>(undefined);
@@ -30,7 +34,11 @@ const ProgressMapPage = () => {
   }
 
   function taskAction() {
-    console.log('task click');
+    if (!quests) return;
+    const taskIndex = quests[0].tasks.findIndex((task) => task.id === openedTask?.id);
+    quests[0].tasks[taskIndex].completed = true;
+    addExp.mutate(quests[0].tasks[taskIndex].rewardExperience);
+    setQuests.mutate(quests);
   }
 
   return (
@@ -44,27 +52,28 @@ const ProgressMapPage = () => {
         action={openedQuest ? questAction : taskAction}
       />
       <SectionComponent sx={{ mt: '100px' }} size='md' title='Карта прогресса'>
-        {mockQuests.map((quest, index) => (
-          <Box key={quest.id}>
-            <BalloonQuestComponent
-              disabled={index !== 0 && mockQuests[index - 1]?.completed === false}
-              variant='quest'
-              title={quest.name}
-              sx={{ bg: quest.bg }}
-              action={() => openQuest(quest, quest.groupName)}
-            />
-            {quest.tasks.map((task, index) => (
+        {quests &&
+          quests.map((quest, index) => (
+            <Box key={quest.id}>
               <BalloonQuestComponent
-                key={task.id + quest.id}
-                disabled={index !== 0 && quest.tasks[index - 1]?.completed === false}
-                variant='task'
-                title={task.name}
-                label={String(index + 1)}
-                action={() => openQuest(task, quest.groupName)}
+                disabled={index !== 0 && quests[index - 1]?.completed === false}
+                variant='quest'
+                title={quest.name}
+                sx={{ bg: quest.bg }}
+                action={() => openQuest(quest, quest.groupName)}
               />
-            ))}
-          </Box>
-        ))}
+              {quest.tasks.map((task, index) => (
+                <BalloonQuestComponent
+                  key={task.id + quest.id}
+                  disabled={index !== 0 && quest.tasks[index - 1]?.completed === false}
+                  variant='task'
+                  title={task.name}
+                  label={String(index + 1)}
+                  action={() => openQuest(task, quest.groupName)}
+                />
+              ))}
+            </Box>
+          ))}
       </SectionComponent>
     </Box>
   );
