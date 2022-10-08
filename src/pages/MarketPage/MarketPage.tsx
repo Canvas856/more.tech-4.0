@@ -2,8 +2,6 @@ import { Flex, Heading } from '@chakra-ui/react';
 import { ImageLinkComponent } from '~/components/ImageLinkComponent';
 import { marketPlaces } from './constants';
 
-const imgUserUrl = new URL('./icons/User.svg', import.meta.url).href;
-
 export const MarketPage = () => {
   return (
     <>
