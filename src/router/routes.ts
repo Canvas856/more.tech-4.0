@@ -1,7 +1,7 @@
 export const enum Routes {
   home = 'home',
   profile = 'personalCabinet',
-  catalog = 'catalog',
+  marketPlace = 'marketPlace',
   coinKeeper = 'coinKeeper',
   platformPrincip = 'faq',
 }
