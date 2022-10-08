@@ -8,11 +8,14 @@ import { isQuest, isTask } from '~/utils/quest';
 import { BalloonQuestComponent } from './components/BalloonQuestComponent';
 import { useQuests, useSetQuests } from '~/api/quests';
 import { useAddExp } from '~/api/exp';
+import { useTransferDigitalRubles } from '~/api/balance';
 
 const ProgressMapPage = () => {
   const { data: quests } = useQuests();
   const setQuests = useSetQuests();
   const addExp = useAddExp();
+  const transferDigitalRubles = useTransferDigitalRubles();
+
   const [groupName, setGroupName] = useState('');
   const [openedTask, setOpenedTask] = useState<Task | undefined>(undefined);
   const [openedQuest, setOpenedQuest] = useState<Quest | undefined>(undefined);
@@ -36,9 +39,18 @@ const ProgressMapPage = () => {
   function taskAction() {
     if (!quests) return;
     const taskIndex = quests[0].tasks.findIndex((task) => task.id === openedTask?.id);
-    quests[0].tasks[taskIndex].completed = true;
-    addExp.mutate(quests[0].tasks[taskIndex].rewardExperience);
+    const task = quests[0].tasks[taskIndex];
+    task.completed = true;
+    const isQuestCompleted = quests[0].tasks.filter((task) => !task.completed).length === 0;
+    let exp: number = task.rewardExperience;
+    let digitalRublesAmount: number = task.rewardCoin;
+    if (isQuestCompleted) {
+      exp += quests[0].rewardExperience;
+      digitalRublesAmount += quests[0].rewardCoin;
+    }
     setQuests.mutate(quests);
+    addExp.mutate(exp);
+    transferDigitalRubles.mutate(digitalRublesAmount);
   }
 
   return (

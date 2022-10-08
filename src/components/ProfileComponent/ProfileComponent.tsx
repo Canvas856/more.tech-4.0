@@ -53,7 +53,7 @@ export const ProfileComponent = () => {
             title='Артамонов Александр'
             subtitle='Продуктовый дизайнер'
             level={Math.floor((exp || 0) / total) + 1}
-            progress={{ current: exp || 0, total, label: '' }}
+            progress={{ current: (exp || 0) % total, total, label: '' }}
           />
         </Box>
         <Box flex='1'>
