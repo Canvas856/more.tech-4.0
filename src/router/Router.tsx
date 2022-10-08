@@ -12,11 +12,12 @@ const Router = () => (
     <PageContainerComponent>
       <HeaderComponent />
       <BrowserRoutes>
-        <Route path={Routes.home} element={<div>1</div>} />
+        <Route path={Routes.home} element={<div>Тут должен быть лендинг</div>} />
         <Route path={Routes.profile} element={<ProfilePage />} />
-        <Route path={Routes.catalog} element={<div>Catalog</div>} />
-        <Route path={Routes.coinKeeper} element={<div>CoinKeeper</div>} />
-        <Route path={Routes.platformPrincip} element={<div>How earn coins</div>} />
+        <Route path={Routes.progressMap} element={<div>Карта прогресса</div>} />
+        <Route path={Routes.catalog} element={<div>Маркетплейс</div>} />
+        <Route path={Routes.wallet} element={<div>Мой кошелёк</div>} />
+        <Route path={Routes.platformPrincip} element={<div>Как работает платформа</div>} />
         <Route path='*' element={<Navigate to={Routes.profile} replace />} />
       </BrowserRoutes>
     </PageContainerComponent>

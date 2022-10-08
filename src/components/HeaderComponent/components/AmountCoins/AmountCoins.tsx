@@ -6,7 +6,7 @@ export const AmountCoins = () => {
   return (
     <Flex flexDirection={'column'} alignItems={'flex-end'}>
       <Text color={colors.brand.blue[500]} fontWeight={'500'} fontSize={'20px'}>
-        Баланс coin
+        Баланс
       </Text>
       <CoinsComponent coins={253} />
     </Flex>
