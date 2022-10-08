@@ -1,5 +1,5 @@
 import { Flex, Heading } from '@chakra-ui/react';
-import { ContentWidthSidebarComponent, FilterComponent } from '~/components';
+import { CardComponent, ContentWidthSidebarComponent, FilterComponent } from '~/components';
 import { ImageLinkComponent } from '~/components/ImageLinkComponent';
 import { AccordeonNft } from './components';
 import { marketPlaces } from './constants';
@@ -32,7 +32,11 @@ export const MarketPage = () => {
             />
           </FilterComponent>
         }
-        content={<div>1</div>}
+        content={
+          <div>
+            <CardComponent />
+          </div>
+        }
       />
     </>
   );
