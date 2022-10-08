@@ -30,12 +30,17 @@ const resetIconUrl = new URL('./reset.svg', import.meta.url).href;
 export const AccordeonNft = ({ sectionOneTitle, sectionTwoTitle, sectionThirdTitle }: Props) => {
   const [range, setRange] = useState([10, 30]);
   return (
-    <Flex flexDir={'column'}>
+    <Flex
+      flexDir={'column'}
+      bgColor={colors.brand.purple[200]}
+      borderRadius={'20px'}
+      padding={'20px'}
+    >
       <Accordion defaultIndex={[0]} allowMultiple>
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex='1' textAlign='left' fontWeight={'600'}>
+              <Box flex='1' textAlign='left'>
                 {sectionOneTitle}
               </Box>
               <AccordionIcon />
@@ -65,7 +70,7 @@ export const AccordeonNft = ({ sectionOneTitle, sectionTwoTitle, sectionThirdTit
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex='1' textAlign='left' fontWeight={'600'}>
+              <Box flex='1' textAlign='left'>
                 {sectionTwoTitle}
               </Box>
               <AccordionIcon />
@@ -91,7 +96,7 @@ export const AccordeonNft = ({ sectionOneTitle, sectionTwoTitle, sectionThirdTit
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex='1' textAlign='left' fontWeight={'600'}>
+              <Box flex='1' textAlign='left'>
                 {sectionThirdTitle}
               </Box>
               <AccordionIcon />
