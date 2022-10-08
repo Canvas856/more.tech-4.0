@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes as BrowserRoutes } from 'react-router-dom';
 import { HeaderComponent } from '~/components';
 import { PageContainerComponent } from '~/components/PageContainerComponent';
+import { MarketPage } from '~/pages';
 import { Routes } from './routes';
 
 // Pages
@@ -16,7 +17,7 @@ const Router = () => (
         <Route path={Routes.home} element={<div>Тут должен быть лендинг</div>} />
         <Route path={Routes.profile} element={<ProfilePage />} />
         <Route path={Routes.progressMap} element={<ProgressMapPage />} />
-        <Route path={Routes.catalog} element={<div>Маркетплейс</div>} />
+        <Route path={Routes.marketPlace} element={<MarketPage />} />
         <Route path={Routes.wallet} element={<div>Мой кошелёк</div>} />
         <Route path={Routes.platformPrincip} element={<div>Как работает платформа</div>} />
         <Route path='*' element={<Navigate to={Routes.profile} replace />} />

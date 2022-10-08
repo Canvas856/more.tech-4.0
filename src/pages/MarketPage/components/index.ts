@@ -1,0 +1,1 @@
+export { AccordeonNft } from './AccordeonNft';
