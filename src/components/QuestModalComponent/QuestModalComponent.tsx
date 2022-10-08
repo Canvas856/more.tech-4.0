@@ -4,22 +4,17 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
-  Box,
   Text,
   Grid,
   GridItem,
-  UnorderedList,
-  ListItem,
   Button,
 } from '@chakra-ui/react';
 import { colors } from '~/theme/colors';
 import { Quest, Task } from '~/types/quest';
-import { CoinsComponent } from '../CoinsComponent';
+import { RewardComponent } from '../RewardComponent';
 import { PanelComponent } from '../PanelComponent';
 import { SectionComponent } from '../SectionComponent';
 import { QuestModalHeaderComponent } from './components/QuestModalHeaderComponent';
-
-// export type ModalType = 'task' | 'quest';
 
 type Props = {
   task?: Task;
@@ -69,7 +64,11 @@ export const QuestModalComponent: React.FC<Props> = ({
               <Text fontSize='23px' fontWeight='700' color={colors.brand.white} mb='10px'>
                 Награды квеста
               </Text>
-              <CoinsComponent coins={75} />
+              <RewardComponent type='coin' reward={task?.rewardCoin || quest?.rewardCoin || 0} />
+              <RewardComponent
+                type='exp'
+                reward={task?.rewardExperience || quest?.rewardExperience || 0}
+              />
             </PanelComponent>
             {(task?.hint || quest?.hint) && (
               <PanelComponent

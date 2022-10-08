@@ -24,7 +24,7 @@ export const BalloonQuestComponent: React.FC<Props> = ({
     bg={disabled ? colors.brand.gray[200] : colors.brand.blue[100]}
     position='relative'
     borderRadius='50%'
-    boxShadow='0px 0px 100px rgba(112, 169, 255, 0.5)'
+    boxShadow={disabled ? 'none' : '0px 0px 100px rgba(112, 169, 255, 0.5)'}
     cursor={disabled ? 'default' : 'pointer'}
     sx={sx}
     onClick={() => !disabled && action?.()}

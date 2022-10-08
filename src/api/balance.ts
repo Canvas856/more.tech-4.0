@@ -15,17 +15,17 @@ const KEY = 'balance';
 
 export const invalidateBalance = () => queryClient.invalidateQueries(KEY);
 
-function floorBalance(balance: Balance): Balance {
+function fixBalance(balance: Balance): Balance {
   return {
-    coinsAmount: Math.floor(balance.coinsAmount),
-    maticAmount: Math.floor(balance.maticAmount),
+    coinsAmount: Number(balance.coinsAmount.toFixed(4)),
+    maticAmount: Number(balance.maticAmount.toFixed(4)),
   };
 }
 
 async function getBalance(): Promise<Balance> {
   const res = await fetch(`${baseUrl}/v1/wallets/${publicWalletKey}/balance`);
   const balance: Balance = await res.json();
-  return floorBalance(balance);
+  return fixBalance(balance);
 }
 
 async function transferDigitalRubles(amount: number) {
@@ -36,11 +36,12 @@ async function transferDigitalRubles(amount: number) {
   };
   return fetch(`${baseUrl}/v1/transfers/ruble`, {
     body: JSON.stringify(body),
+    method: 'POST',
   });
 }
 
 export function useBalance() {
-  return useQuery([KEY], getBalance);
+  return useQuery([KEY], getBalance, { refetchInterval: 2000 });
 }
 
 export function useTransferDigitalRubles() {

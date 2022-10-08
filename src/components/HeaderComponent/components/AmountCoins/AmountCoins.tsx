@@ -1,6 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { useBalance } from '~/api/balance';
-import { CoinsComponent } from '~/components/CoinsComponent';
+import { RewardComponent } from '~/components/RewardComponent';
 import { colors } from '~/theme/colors';
 
 export const AmountCoins = () => {
@@ -11,7 +11,7 @@ export const AmountCoins = () => {
       <Text color={colors.brand.blue[500]} fontWeight={'500'} fontSize={'20px'}>
         Баланс
       </Text>
-      <CoinsComponent coins={balance ? balance.coinsAmount : 0} />
+      <RewardComponent type='coin' reward={balance ? balance.coinsAmount : 0} />
     </Flex>
   );
 };
