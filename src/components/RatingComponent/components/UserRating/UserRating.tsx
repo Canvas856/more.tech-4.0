@@ -1,7 +1,7 @@
 import { Avatar, Flex, Grid, GridItem, Heading, Image, Text } from '@chakra-ui/react';
-import { imgUrl as coinIcon } from '~/components/CoinsComponent/CoinsComponent';
 import { colors } from '~/theme/colors';
 
+const coinIcon = new URL('../../../../assets/images/ditital-rubles-icon.svg', import.meta.url).href;
 const avatarUrl = new URL('./Ellipse 3.svg', import.meta.url).href;
 
 type Props = {

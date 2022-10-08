@@ -1,7 +1,7 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
 import { colors } from '~/theme/colors';
 
-export const imgUrl = new URL('./coin-svgrepo-com 1.svg', import.meta.url).href;
+const coinIcon = new URL('../../assets/images/ditital-rubles-icon.svg', import.meta.url).href;
 
 type Props = { coins: number };
 
@@ -10,6 +10,6 @@ export const CoinsComponent: React.FC<Props> = ({ coins }) => (
     <Text color={colors.brand.white} fontWeight={'700'} fontSize={'40px'} lineHeight={'normal'}>
       {coins}
     </Text>
-    <Image src={imgUrl} alt='coin' width={'45'} height={'45'} />
+    <Image src={coinIcon} alt='coin' width={'35'} height={'35'} />
   </Flex>
 );
