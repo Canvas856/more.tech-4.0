@@ -1,1 +1,3 @@
 export { HeaderComponent } from './HeaderComponent';
+export { ContentWidthSidebarComponent } from './ContentWithSidebarComponent';
+export { FilterComponent } from './FilterComponent';
