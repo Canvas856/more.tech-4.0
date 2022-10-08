@@ -19,7 +19,6 @@ export type LargeQuestProps = {
 } & QuestProps;
 
 export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
-  action,
   actionLabel,
   disabled,
   title,
@@ -30,7 +29,7 @@ export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
   subtitle,
   sx,
 }) => {
-  const [formattedDeadline, setFormattedDeadline] = useState<string>(formatDeadline());
+  const [formattedDeadline] = useState<string>(formatDeadline());
 
   function formatDeadline(): string {
     const duration = intervalToDuration({
@@ -112,7 +111,7 @@ export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
         ) : (
           <Button variant='brand-outline'>{actionLabel}</Button>
         )}
-        <RewardComponent reward={reward} />
+        <RewardComponent type='coin' reward={reward} />
       </Flex>
     </PanelComponent>
   );

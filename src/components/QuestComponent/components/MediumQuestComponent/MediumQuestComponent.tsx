@@ -12,7 +12,6 @@ export type MediumQuestProps = {
 } & QuestProps;
 
 export const MediumQuestComponent: React.FC<MediumQuestProps> = ({
-  action,
   actionLabel,
   disabled,
   title,

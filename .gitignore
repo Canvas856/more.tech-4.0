@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .env
+.env.gh-pages
 
 # Editor directories and files
 !.vscode/extensions.json

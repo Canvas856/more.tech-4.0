@@ -9,7 +9,7 @@ const ProfilePage = React.lazy(() => import('~/pages/ProfilePage'));
 const ProgressMapPage = React.lazy(() => import('~/pages/ProgressMapPage'));
 
 const Router = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
     <PageContainerComponent>
       <HeaderComponent />
       <BrowserRoutes>

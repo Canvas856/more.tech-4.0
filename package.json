@@ -12,7 +12,8 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
     "gen:theme-typings": "chakra-cli tokens ./src/theme/index.ts",
-    "postinstall": "npm run gen:theme-typings"
+    "postinstall": "npm run gen:theme-typings",
+    "deploy:gh-pages": "bash gh-pages-deploy.sh"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",

@@ -4,13 +4,7 @@ import { PanelComponent } from '~/components/PanelComponent';
 import { colors } from '~/theme/colors';
 import { QuestProps } from '../../types/quest-props';
 
-export const SmallQuestComponent: React.FC<QuestProps> = ({
-  action,
-  disabled,
-  title,
-  subtitle,
-  sx,
-}) => (
+export const SmallQuestComponent: React.FC<QuestProps> = ({ disabled, title, subtitle, sx }) => (
   <PanelComponent
     sx={{
       padding: '32px 29px',
