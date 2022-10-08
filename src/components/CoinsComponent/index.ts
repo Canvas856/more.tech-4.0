@@ -1,1 +1,0 @@
-export { CoinsComponent } from './CoinsComponent';

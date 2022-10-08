@@ -1,0 +1,1 @@
+export { ShadowComponent } from './ShadowComponent';

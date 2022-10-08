@@ -7,17 +7,19 @@ import { Routes } from './routes';
 
 // Pages
 const ProfilePage = React.lazy(() => import('~/pages/ProfilePage'));
+const ProgressMapPage = React.lazy(() => import('~/pages/ProgressMapPage'));
 
 const Router = () => (
   <BrowserRouter>
     <PageContainerComponent>
       <HeaderComponent />
       <BrowserRoutes>
-        <Route path={Routes.home} element={<div>1</div>} />
+        <Route path={Routes.home} element={<div>Тут должен быть лендинг</div>} />
         <Route path={Routes.profile} element={<ProfilePage />} />
+        <Route path={Routes.progressMap} element={<ProgressMapPage />} />
         <Route path={Routes.marketPlace} element={<MarketPage />} />
-        <Route path={Routes.coinKeeper} element={<div>CoinKeeper</div>} />
-        <Route path={Routes.platformPrincip} element={<div>How earn coins</div>} />
+        <Route path={Routes.wallet} element={<div>Мой кошелёк</div>} />
+        <Route path={Routes.platformPrincip} element={<div>Как работает платформа</div>} />
         <Route path='*' element={<Navigate to={Routes.profile} replace />} />
       </BrowserRoutes>
     </PageContainerComponent>

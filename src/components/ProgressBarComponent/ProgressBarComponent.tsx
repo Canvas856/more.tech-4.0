@@ -6,7 +6,7 @@ type Props = { percent: number };
 export const ProgressBarComponent: React.FC<Props> = ({ percent }) => (
   <Box>
     <Text mb='0.3em' fontWeight='600' fontSize='1.6em'>
-      {percent}%
+      {Math.floor(percent)}%
     </Text>
     <Box
       h='8px'

@@ -1,0 +1,1 @@
+export { RewardComponent } from './RewardComponent';

@@ -2,7 +2,7 @@ import { Flex, Button, Text, Box } from '@chakra-ui/react';
 import { formatDuration, intervalToDuration, format } from 'date-fns';
 import ru from 'date-fns/locale/ru';
 import { useState } from 'react';
-import { CoinsComponent } from '~/components/CoinsComponent';
+import { RewardComponent } from '~/components/RewardComponent';
 import { DisabledPanelComponent } from '~/components/DisabledPanelComponent';
 import { PanelComponent } from '~/components/PanelComponent';
 import { ProgressBarComponent } from '~/components/ProgressBarComponent';
@@ -112,7 +112,7 @@ export const LargeQuestComponent: React.FC<LargeQuestProps> = ({
         ) : (
           <Button variant='brand-outline'>{actionLabel}</Button>
         )}
-        <CoinsComponent coins={reward} />
+        <RewardComponent reward={reward} />
       </Flex>
     </PanelComponent>
   );
