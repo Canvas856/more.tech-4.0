@@ -1,4 +1,4 @@
-import { Box, Flex, SystemStyleObject, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, SystemStyleObject, Text } from '@chakra-ui/react';
 import { SectionComponent } from '~/components/SectionComponent';
 
 import { Quest, Task } from '~/types/quest';
@@ -99,6 +99,9 @@ const ProgressMapPage = () => {
 
   return (
     <Box position='relative'>
+      <Button variant='brand-fill' onClick={() => localStorage.clear()}>
+        очистить профиль
+      </Button>
       <QuestModalComponent
         isOpen={Boolean(openedTask) || Boolean(openedQuest)}
         onClose={closeQuest}
