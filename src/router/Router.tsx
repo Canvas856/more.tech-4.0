@@ -6,6 +6,7 @@ import { Routes } from './routes';
 
 // Pages
 const ProfilePage = React.lazy(() => import('~/pages/ProfilePage'));
+const ProgressMapPage = React.lazy(() => import('~/pages/ProgressMapPage'));
 
 const Router = () => (
   <BrowserRouter>
@@ -14,7 +15,7 @@ const Router = () => (
       <BrowserRoutes>
         <Route path={Routes.home} element={<div>Тут должен быть лендинг</div>} />
         <Route path={Routes.profile} element={<ProfilePage />} />
-        <Route path={Routes.progressMap} element={<div>Карта прогресса</div>} />
+        <Route path={Routes.progressMap} element={<ProgressMapPage />} />
         <Route path={Routes.catalog} element={<div>Маркетплейс</div>} />
         <Route path={Routes.wallet} element={<div>Мой кошелёк</div>} />
         <Route path={Routes.platformPrincip} element={<div>Как работает платформа</div>} />

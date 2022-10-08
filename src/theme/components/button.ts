@@ -31,8 +31,9 @@ export const Button: ComponentStyleConfig = {
     },
     'brand-fill': {
       '--color': colors.brand.blue[200],
+      '--second-color': colors.brand.white,
       '--active-color': colors.brand.blue[300],
-      border: `2px solid ${colors.brand.white}`,
+      border: `2px solid var(--second-color)`,
       borderRadius: '12px',
       fontSize: '24px',
       lineHeight: '120%',
@@ -40,12 +41,12 @@ export const Button: ComponentStyleConfig = {
       padding: '14px 25px',
       height: 'auto',
       fontWeight: '800',
-      background: colors.brand.white,
+      background: 'var(--second-color)',
       color: 'var(--color)',
       '&:hover': {
         background: 'var(--color)',
         borderColor: 'var(--color)',
-        color: colors.brand.white,
+        color: 'var(--second-color)',
       },
       '&:active': {
         background: 'var(--active-color)',
