@@ -32,11 +32,7 @@ export const MarketPage = () => {
             />
           </FilterComponent>
         }
-        content={
-          <div>
-            <CardComponent />
-          </div>
-        }
+        content={<div></div>}
       />
     </>
   );
