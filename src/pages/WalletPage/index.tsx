@@ -40,7 +40,7 @@ const WalletPage = () => {
               <SidebarLink to={`/${Routes.wallet}`} borderBottom='1px solid #161621'>
                 Мои NFT
               </SidebarLink>
-              <SidebarLink to={Routes.home} borderBottom='1px solid #161621'>
+              <SidebarLink to={Routes.transfer} borderBottom='1px solid #161621'>
                 Переводы
               </SidebarLink>
               <SidebarLink to={Routes.myTransactionHistory} borderBottom='1px solid #161621'>

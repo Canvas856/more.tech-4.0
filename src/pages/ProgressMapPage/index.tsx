@@ -8,7 +8,7 @@ import { isQuest, isTask } from '~/utils/quest';
 import { BalloonQuestComponent } from './components/BalloonQuestComponent';
 import { useQuests, useSetQuests } from '~/api/quests';
 import { useAddExp } from '~/api/exp';
-import { useTransferDigitalRubles } from '~/api/balance';
+import { useAddRubles } from '~/api/balance';
 import { colors } from '~/theme/colors';
 
 const pathLeftIcon = new URL('../../assets/images/path-left.svg', import.meta.url).href;
@@ -48,7 +48,7 @@ const ProgressMapPage = () => {
   const { data: quests } = useQuests();
   const setQuests = useSetQuests();
   const addExp = useAddExp();
-  const transferDigitalRubles = useTransferDigitalRubles();
+  const transferDigitalRubles = useAddRubles();
 
   const [groupName, setGroupName] = useState('');
   const [openedTask, setOpenedTask] = useState<Task | undefined>(undefined);

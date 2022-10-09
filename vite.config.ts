@@ -8,7 +8,7 @@ export default ({ mode }: { mode: any }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
   return defineConfig({
-    plugins: [react(), tsconfigPaths(), svgr()],
+    plugins: [svgr(), react(), tsconfigPaths()],
     base: process.env.VITE_BASE_URL,
     server: {
       watch: {

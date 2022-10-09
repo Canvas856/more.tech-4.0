@@ -1,16 +1,11 @@
-import { useQuery, useMutation } from 'react-query';
 import axios from 'axios';
+import { useQuery, useMutation } from 'react-query';
 import { Balance } from '~/types/balance';
 import { fixBalance } from '~/utils/balance';
 import { queryClient } from './client';
 import { invalidateHistory } from './transaction-history';
 import { Nft } from '~/types/nft-balance';
-
-type TransferDigitalRublesRequest = {
-  fromPrivateKey: string;
-  toPublicKey: string;
-  amount: number;
-};
+import { transferDigitalRubles } from './transfer';
 
 const baseUrl = import.meta.env.VITE_VTB_API_BASE_URL;
 const publicWalletKey = import.meta.env.VITE_WALLET_PUBLIC_KEY;
@@ -25,21 +20,18 @@ async function getBalance(): Promise<Balance> {
   const res = await axios.get<Balance>(`${baseUrl}/v1/wallets/${publicWalletKey}/balance`);
   return fixBalance(res.data);
 }
-
 async function getNft(): Promise<Nft[]> {
   const res = await axios.get<{ balance: Nft[] }>(
     `${baseUrl}/v1/wallets/${publicWalletKey}/nft/balance`,
   );
   return res.data.balance;
 }
-
-async function transferDigitalRubles(amount: number) {
-  const body: TransferDigitalRublesRequest = {
+async function addRubles(amount: number) {
+  return transferDigitalRubles({
     amount,
     fromPrivateKey: privateAdminWalletKey,
     toPublicKey: publicWalletKey,
-  };
-  return axios.post(`${baseUrl}/v1/transfers/ruble`, JSON.stringify(body));
+  });
 }
 
 export function useBalance() {
@@ -48,11 +40,13 @@ export function useBalance() {
 export function useNftBalance() {
   return useQuery([NFT_KEY], getNft, { retry: 3 });
 }
-
-export function useTransferDigitalRubles() {
-  return useMutation(async (amount: number) => {
-    await transferDigitalRubles(amount);
-    invalidateBalance();
-    invalidateHistory();
-  });
+export function useAddRubles() {
+  return useMutation(
+    async (amount: number) => {
+      await addRubles(amount);
+      invalidateBalance();
+      invalidateHistory();
+    },
+    { retry: 3 },
+  );
 }

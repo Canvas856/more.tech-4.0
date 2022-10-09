@@ -1,7 +1,6 @@
 import { Grid, GridItem } from '@chakra-ui/react';
 import { CardComponent } from '~/components';
 
-import userImage from '~/assets/images/user.png';
 import { useNftBalance } from '~/api/balance';
 
 const MyNftPage = () => {
