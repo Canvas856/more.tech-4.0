@@ -81,6 +81,7 @@ const TransferPage = () => {
           </InputGroup>
           <Flex mt='60px' justifyContent='flex-end'>
             <Button
+              isLoading={transferDigitalRubles.isLoading}
               type='submit'
               variant='brand-fill'
               sx={{
