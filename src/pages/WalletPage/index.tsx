@@ -1,6 +1,6 @@
 import { Grid, GridItem, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import React from 'react';
-import { Link, Outlet, To } from 'react-router-dom';
+import { NavLink, Outlet, To } from 'react-router-dom';
 import { PanelComponent } from '~/components/PanelComponent';
 import { SectionComponent } from '~/components/SectionComponent';
 import { Routes } from '~/router/routes';
@@ -12,9 +12,21 @@ const SidebarLink: React.FC<{ to: To; borderBottom?: string; children: React.Rea
   children,
 }) => (
   <ListItem>
-    <Text as={Link} display='block' to={to} p='20px 25px' borderBottom={borderBottom}>
-      {children}
-    </Text>
+    <NavLink end to={to}>
+      {({ isActive }) => (
+        <Text
+          display='block'
+          p='20px 25px'
+          borderBottom={borderBottom}
+          fontWeight='600'
+          fontSize='18px'
+          color={isActive ? colors.brand.blue[100] : colors.brand.white}
+          sx={{ '&:hover': { color: colors.brand.blue[100] } }}
+        >
+          {children}
+        </Text>
+      )}
+    </NavLink>
   </ListItem>
 );
 
@@ -28,13 +40,13 @@ const WalletPage = () => {
               <SidebarLink to={`/${Routes.wallet}`} borderBottom='1px solid #161621'>
                 Мои NFT
               </SidebarLink>
-              <SidebarLink to={`/${Routes.wallet}`} borderBottom='1px solid #161621'>
+              <SidebarLink to={Routes.home} borderBottom='1px solid #161621'>
                 Переводы
               </SidebarLink>
               <SidebarLink to={Routes.myTransactionHistory} borderBottom='1px solid #161621'>
                 История
               </SidebarLink>
-              <SidebarLink to={`/${Routes.wallet}`}>Обмены</SidebarLink>
+              <SidebarLink to={Routes.home}>Обмены</SidebarLink>
             </UnorderedList>
           </PanelComponent>
         </GridItem>
