@@ -32,7 +32,7 @@ const SidebarLink: React.FC<{ to: To; borderBottom?: string; children: React.Rea
 
 const WalletPage = () => {
   return (
-    <SectionComponent size='lg' title='Мой кошелёк' sx={{ mt: '64px' }}>
+    <SectionComponent size='lg' title='Мой кошелёк' sx={{ mt: '60px' }}>
       <Grid templateColumns='287px 1fr' gap='31px'>
         <GridItem>
           <PanelComponent sx={{ p: 0, bg: colors.brand.purple[200], borderRadius: '20px' }}>

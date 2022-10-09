@@ -9,7 +9,7 @@ import userImage from '~/assets/images/user.png';
 export const MarketPage = () => {
   return (
     <>
-      <Heading marginTop={'97px'} marginBottom={'44px'} fontSize={'48px'}>
+      <Heading marginTop={'60px'} marginBottom={'44px'} fontSize={'48px'}>
         Маркетплейс
       </Heading>
       <Flex gap={'20px'}>

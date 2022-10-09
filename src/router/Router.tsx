@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes as BrowserRoutes } from 'react-router-dom';
 import { HeaderComponent } from '~/components';
@@ -27,7 +28,20 @@ const Router = () => (
           <Route path={Routes.myTransactionHistory} element={<MyTransactionHistoryPage />} />
           <Route path={Routes.transfer} element={<TransferPage />} />
         </Route>
-        <Route path={Routes.platformPrincip} element={<div>Как работает платформа</div>} />
+        <Route
+          path={Routes.platformPrincip}
+          element={
+            <Button
+              variant='brand-fill'
+              onClick={() => {
+                localStorage.clear();
+                window.location.reload();
+              }}
+            >
+              очистить профиль (для теста)
+            </Button>
+          }
+        />
         <Route path='*' element={<Navigate to={Routes.profile} replace />} />
       </BrowserRoutes>
     </PageContainerComponent>

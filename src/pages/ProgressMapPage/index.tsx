@@ -100,15 +100,6 @@ const ProgressMapPage = () => {
 
   return (
     <Box position='relative'>
-      <Button
-        variant='brand-fill'
-        onClick={() => {
-          localStorage.clear();
-          window.location.reload();
-        }}
-      >
-        очистить профиль (для теста)
-      </Button>
       <QuestModalComponent
         isOpen={Boolean(openedTask) || Boolean(openedQuest)}
         onClose={closeQuest}
@@ -117,7 +108,7 @@ const ProgressMapPage = () => {
         quest={openedQuest}
         action={openedQuest ? questAction : taskAction}
       />
-      <SectionComponent sx={{ mt: '100px' }} size='md' title='Карта прогресса'>
+      <SectionComponent sx={{ mt: '60px' }} size='lg' title='Карта прогресса'>
         <Flex mt='100px' flexDirection='column-reverse'>
           {quests &&
             quests.map((quest, questIndex) => (
