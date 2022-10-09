@@ -5,4 +5,5 @@ export const enum Routes {
   marketPlace = 'marketPlace',
   wallet = 'wallet',
   platformPrincip = 'platformPrincip',
+  myTransactionHistory = 'myTransactionHistory',
 }

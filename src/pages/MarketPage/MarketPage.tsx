@@ -4,6 +4,8 @@ import { ImageLinkComponent } from '~/components/ImageLinkComponent';
 import { AccordeonNft } from './components';
 import { marketPlaces } from './constants';
 
+import userImage from '~/assets/images/user.png';
+
 export const MarketPage = () => {
   return (
     <>
@@ -32,7 +34,17 @@ export const MarketPage = () => {
             />
           </FilterComponent>
         }
-        content={<div></div>}
+        content={
+          <div>
+            <CardComponent
+              amountCoins={250}
+              cardName='№12. Житель в железном шлеме'
+              imageUrl={userImage}
+              badges={['Minecraft', 'Голова']}
+              footer={<div>кнопки</div>}
+            ></CardComponent>
+          </div>
+        }
       />
     </>
   );

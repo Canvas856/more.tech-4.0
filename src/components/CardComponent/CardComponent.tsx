@@ -1,11 +1,10 @@
-import { Badge, Box, color, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import { Badge, Box, Flex, Heading, Image } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 import { colors } from '~/theme/colors';
 
 type Props = {
-  amounCoins: number;
+  amountCoins: number;
   cardName: string;
-  children?: React.ReactNode;
   badges?: string[];
   footer?: React.ReactNode;
   imageUrl: string;
@@ -13,14 +12,13 @@ type Props = {
 
 const digitalRubleUrl = new URL('./digital rubles.svg', import.meta.url).href;
 
-export const CardComponent = ({
-  amounCoins,
+export const CardComponent: React.FC<Props> = ({
+  amountCoins,
   cardName,
-  children,
   badges,
   footer,
   imageUrl,
-}: Props) => {
+}) => {
   return (
     <Flex
       bgColor={colors.brand.purple[200]}
@@ -32,12 +30,13 @@ export const CardComponent = ({
     >
       <Suspense>
         <Box position={'relative'}>
-          <Image alt={cardName} src={imageUrl} />
+          <Image h='270px' alt={cardName} src={imageUrl} />
           {badges?.length !== 0 && (
             <Flex
               gap={'8px'}
               flexWrap={'wrap'}
               position={'absolute'}
+              left={'-10px'}
               transform={'translate(10px,-35px);'}
             >
               {badges?.map((el) => {
@@ -64,7 +63,7 @@ export const CardComponent = ({
       </Heading>
       <Flex gap={'5px'} alignItems={'flex-end'} lineHeight={'30px'}>
         <Box fontSize={'32px'} fontWeight={'700'}>
-          {amounCoins}
+          {amountCoins}
         </Box>
         <Image alt={'coin'} src={digitalRubleUrl} />
       </Flex>
