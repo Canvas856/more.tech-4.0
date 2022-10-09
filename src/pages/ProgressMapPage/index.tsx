@@ -95,12 +95,19 @@ const ProgressMapPage = () => {
     setQuests.mutate(quests);
     addExp.mutate(exp);
     transferDigitalRubles.mutate(digitalRublesAmount);
+    closeQuest();
   }
 
   return (
     <Box position='relative'>
-      <Button variant='brand-fill' onClick={() => localStorage.clear()}>
-        очистить профиль
+      <Button
+        variant='brand-fill'
+        onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}
+      >
+        очистить профиль (для теста)
       </Button>
       <QuestModalComponent
         isOpen={Boolean(openedTask) || Boolean(openedQuest)}

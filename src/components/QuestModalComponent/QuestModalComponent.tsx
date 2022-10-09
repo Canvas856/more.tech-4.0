@@ -47,6 +47,7 @@ export const QuestModalComponent: React.FC<Props> = ({
                 fontSize='16px'
                 lineHeight='160%'
                 color={colors.brand.purple[300]}
+                whiteSpace='pre-wrap'
               >
                 {task?.description || quest?.description}
               </Text>
